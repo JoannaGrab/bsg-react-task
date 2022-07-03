@@ -1,25 +1,19 @@
 import Splash from "./pages/Splash";
-import Main from "./pages/Main";
-import Watch from "./pages/Watch";
+import Home from "./pages/Home";
+import Player from "./pages/Player";
 import "./App.css";
 import React from "react";
 import { Routes, Route } from "react-router-dom";
 
 function App() {
   return (
-    <div>
-      {/* {showSplash && <Splash onLoadingComplete={changeScreen} />}
-      {!showSplash && <Navigate to="/main" replace={true} />} */}
-      {/* <Watch /> */}
-
-      <Routes>
-        <Route path="/" element={<Splash />} />
-        <Route path="main" element={<Main />} />
-        <Route path="watch">
-          <Route path=":id" element={<Watch />} />
-        </Route>
-      </Routes>
-    </div>
+    <Routes>
+      <Route path="/" element={<Splash />} />
+      <Route path="home" element={<Home />} />
+      <Route path="play">
+        <Route path=":id" element={<Player />} />
+      </Route>
+    </Routes>
   );
 }
 

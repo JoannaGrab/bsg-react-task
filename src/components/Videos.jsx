@@ -1,7 +1,7 @@
 import styled from "styled-components";
-import List from "../components/List";
+import List from "./List";
 
-function Movies() {
+function Videos() {
   return (
     <Container>
       <List />
@@ -16,4 +16,4 @@ const Container = styled.div`
   padding: 2em;
 `;
 
-export default Movies;
+export default Videos;

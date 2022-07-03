@@ -1,14 +1,14 @@
 import styled from "styled-components";
 import Navbar from "../components/Navbar";
 import Featured from "../components/Featured";
-import Movies from "../components/Movies";
+import Videos from "../components/Videos";
 
-function Main() {
+function Home() {
   return (
     <Container>
       <Navbar />
       <Featured />
-      <Movies />
+      <Videos />
     </Container>
   );
 }
@@ -18,4 +18,4 @@ const Container = styled.div`
   position: relative;
 `;
 
-export default Main;
+export default Home;

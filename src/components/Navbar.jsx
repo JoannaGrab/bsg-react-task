@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import logo from "../BSG-Logo.svg";
+import logo from "../assets/bsgLogo.svg";
 
 function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -11,7 +11,6 @@ function Navbar() {
   };
 
   return (
-    // TODO: Check on mobile
     <Wrapper className={isScrolled ? "navbar scrolled" : "navbar"}>
       <Container>
         <Left>

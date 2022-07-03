@@ -1,5 +1,5 @@
-import background from "../BackGround.jpeg";
-import logo from "../BSG-Logo.svg";
+import background from "../assets/backGround.jpeg";
+import logo from "../assets/bsgLogo.svg";
 import styled from "styled-components";
 import { useEffect, useState } from "react";
 import { getFreshToken } from "../authToken";
@@ -12,7 +12,7 @@ function Splash() {
   useEffect(() => {
     getFreshToken(
       () => {
-        navigate("/main");
+        navigate("/home");
       },
       () => setShowError(true)
     );

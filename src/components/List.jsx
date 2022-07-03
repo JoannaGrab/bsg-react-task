@@ -5,29 +5,28 @@ import "react-multi-carousel/lib/styles.css";
 import styled from "styled-components";
 import { getFreshToken } from "../authToken";
 import { bsgAPI } from "../bsgAPI";
-import videoPlaceholder from "../video-placeholder.png";
+import videoPlaceholder from "../assets/videoPlaceholder.png";
 
 function List() {
-  const [moviesList, setMoviesList] = useState({ nextListId: 2, movies: [] });
+  const [videosList, setVideosList] = useState({ nextListId: 2, videos: [] });
   const [showError, setShowError] = useState(false);
-  const [showMoviesList, setShowMoviesList] = useState(false);
+  const [showVideosList, setShowVideosList] = useState(false);
   let navigate = useNavigate();
 
   useEffect(() => {
-    if (moviesList.movies.length < 15 && moviesList.nextListId <= 7) {
+    if (videosList.videos.length < 15 && videosList.nextListId <= 7) {
       getFreshToken(
         (token) => {
           bsgAPI.getMediaList(
             token.value,
-            moviesList.nextListId,
-            15 - moviesList.movies.length,
-            (movies) => {
-              console.log(movies);
-              setMoviesList({
-                nextListId: (moviesList.nextListId += 1),
-                movies: moviesList.movies.concat(movies.Entities),
+            videosList.nextListId,
+            15 - videosList.videos.length,
+            (videos) => {
+              setVideosList({
+                nextListId: (videosList.nextListId += 1),
+                videos: videosList.videos.concat(videos.Entities),
               });
-              setShowMoviesList(true);
+              setShowVideosList(true);
             },
             () => setShowError(true)
           );
@@ -35,12 +34,12 @@ function List() {
         () => setShowError(true)
       );
     }
-  }, [moviesList, moviesList.movies.length]);
+  }, [videosList, videosList.videos.length]);
 
   return (
     <div>
-      {!showMoviesList && <Text>Loading...</Text>}
-      {showMoviesList && (
+      {!showVideosList && <Text>Loading...</Text>}
+      {showVideosList && (
         <ListContainer>
           <ListTitle>Favourite videos</ListTitle>
           {showError && (
@@ -52,9 +51,7 @@ function List() {
               arrows
               autoPlaySpeed={3000}
               centerMode={false}
-              // itemClass="image-item"
               containerClass="container-with-dots"
-              // dotListClass=""
               draggable
               focusOnSelect={false}
               infinite={false}
@@ -97,15 +94,14 @@ function List() {
               rtl={false}
               shouldResetAutoplay
               showDots={false}
-              // sliderClass=""
               slidesToSlide={1}
               swipeable
             >
-              {moviesList.movies.map((movie) => (
+              {videosList.videos.map((movie) => (
                 <Media
                   key={movie.Id}
                   onClick={() => {
-                    navigate(`/watch/${movie.Id}`);
+                    navigate(`/play/${movie.Id}`);
                   }}
                 >
                   <MediaTitle>{movie.Title}</MediaTitle>

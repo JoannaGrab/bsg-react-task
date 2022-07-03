@@ -7,7 +7,7 @@ import { useParams } from "react-router-dom";
 import styled from "styled-components";
 import Navbar from "../components/Navbar";
 
-function Watch() {
+function Player() {
   const [mediaUrl, setMediaUrl] = useState("");
   const [showError, setShowError] = useState(false);
   let { id } = useParams();
@@ -64,4 +64,4 @@ const Text = styled.h1`
   margin-top: 40vh;
 `;
 
-export default Watch;
+export default Player;

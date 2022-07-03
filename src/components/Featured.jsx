@@ -1,13 +1,13 @@
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
-import featured from "../featured.jpg";
+import featured from "../assets/featured.jpg";
 import { mobile } from "../responsive";
 
 function Featured() {
   let navigate = useNavigate();
 
   const handleClick = () => {
-    navigate("/watch/17");
+    navigate("/play/17");
   };
 
   return (
