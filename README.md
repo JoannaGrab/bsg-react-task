@@ -52,3 +52,6 @@ Please make sure the app is running on port 3000, otherwise there will be CORS p
 
 To display images in 16:9 aspect ratio, CSS `aspect-ratio` property was used. According to [documentation](https://developer.mozilla.org/en-US/docs/Web/CSS/aspect-ratio) it is not supported in every browser.
 Another way to set aspect ratio of an image is to use ['Padding-Top Hack'](https://www.gavsblog.com/blog/change-the-aspect-ratio-of-an-image-using-css#:~:text=The%20premise%20is%20that%20we,to%20adjust%20the%20aspect%20ratio.&text=For%20a%2016%3A9%20aspect,us%20a%20padding%20of%2056.25%25.).
+
+## FLOW DIAGRAM:
+![](authFlow.svg)
