@@ -1,70 +1,54 @@
-# Getting Started with Create React App
+# Solution of a Better Software Group - React platform - Task 1
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## MAIN GOAL
 
-## Available Scripts
+The goal of this task was to make an OTT web application containing video content with the option of playback.
+
+## HOW TO RUN
 
 In the project directory, you can run:
 
-### `npm start`
+```
+npm start
+```
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+It runs the app in the development mode.
+By default if starts on port 3000, but if it is already taken different port will be assigned.
+Please make sure the app is running on port 3000, otherwise there will be CORS problems when polling the API.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## DONE:
 
-### `npm test`
+##### 1. Splash screen
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Authorize and login as Anonymous user
+- Redirect to Home screen
+- Show error message if something went wrong
 
-### `npm run build`
+##### 2. Home (main) screen
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- Get the list of media (videos, titles and images)
+- Display media on a list with scroll possibility
+- Redirect to Player screen after clicking on list item or Play button of featured video
+- Featured video is a static placeholder, redirection is always made to the same video
+- Show error message if something went wrong
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+##### 3. Player screen
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- Display player
+- Show error message if something went wrong
 
-### `npm run eject`
+## IMPROVE:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+1. Write tests
+2. Use TypeScript
+3. Add second list with video content
+4. Add a login screen and functionality for registered users
+5. Handle responsive views
+6. Handle internationalisation and localisation
+7. Change the paths in `<Route path=""/>` components and `navigate()` functions to be generated dynamically i.e. save all paths in one place and take them during the building of an app (not hardcode paths as it is right now).
+8. Sometimes there are problems with playing the videos (specially on mobile view). It is not clear what is the reason - the player library itself or the API. When the problem occurs, the error message is displayed.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## INFO:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+To display images in 16:9 aspect ratio, CSS `aspect-ratio` property was used. According to [documentation](https://developer.mozilla.org/en-US/docs/Web/CSS/aspect-ratio) it is not supported in every browser.
+Another way to set aspect ratio of an image is to use ['Padding-Top Hack'](https://www.gavsblog.com/blog/change-the-aspect-ratio-of-an-image-using-css#:~:text=The%20premise%20is%20that%20we,to%20adjust%20the%20aspect%20ratio.&text=For%20a%2016%3A9%20aspect,us%20a%20padding%20of%2056.25%25.).
